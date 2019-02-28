@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.flatworld.NewsDetail.NewsDetailViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/ll_back"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pad_50dp"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/pad_5dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/pad_30dp"
+                android:layout_height="@dimen/pad_30dp"
+                android:layout_margin="@dimen/pad_10dp"
+                android:onClick="@{() -> viewmodel.onBack()}"
+                app:srcCompat="@drawable/ic_back_arrow" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_bookmark"
+                android:layout_width="@dimen/pad_30dp"
+                android:layout_height="@dimen/pad_30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="right|center"
+                android:layout_margin="@dimen/pad_10dp"
+                app:srcCompat="@drawable/ic_bookmark" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iv_detailimg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pad_200dp"
+            android:layout_below="@+id/ll_back"
+            android:scaleType="fitXY" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_detailimg"
+            android:padding="@dimen/pad_10dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/txt_20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pad_50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pad_50dp"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_published"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/txt_16sp" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="@dimen/pad_40dp"
+                    android:layout_marginTop="@dimen/pad_3dp"
+                    android:layout_marginBottom="@dimen/pad_3dp"
+                    android:background="@color/colorDivider" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/txt_16sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

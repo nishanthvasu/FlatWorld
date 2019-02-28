@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="dishesmodel"
+            type="com.flatworld.HomeScreen.DataModel.NewsData.News" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_adaptermain"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginTop="@dimen/pad_5dp"
+        android:layout_marginRight="@dimen/pad_5dp"
+        android:background="@drawable/shape_rectangle_border_greydark"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:padding="@dimen/pad_10dp"
+            android:scaleType="fitXY"
+            bind:urlToImage="@{dishesmodel.urlToImage}" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/news_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/pad_10dp"
+            android:paddingTop="@dimen/pad_5dp"
+            android:paddingRight="@dimen/pad_10dp"
+            android:paddingBottom="@dimen/pad_10dp"
+            android:text="@={dishesmodel.title}"
+            android:textColor="@color/colorBlue" />
+    </LinearLayout>
+</layout>

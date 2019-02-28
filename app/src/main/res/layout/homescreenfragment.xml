@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.flatworld.HomeScreen.HomeScreenViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:gravity="center">
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/dl_navigationDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/pad_10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/pad_50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_headerMenu"
+                        android:layout_width="@dimen/txt_22sp"
+                        android:layout_height="@dimen/txt_22sp"
+                        android:layout_gravity="left|center"
+                        android:layout_marginTop="@dimen/pad_5dp"
+                        app:srcCompat="@drawable/ic_menu" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/txt_movies"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="@dimen/txt_16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorDivider" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_newslist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/pad_10dp" />
+
+            </LinearLayout>
+
+            <include
+                layout="@layout/navigationdrawerslidemenu"
+                android:layout_width="250dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="start" />
+        </android.support.v4.widget.DrawerLayout>
+
+    </FrameLayout>
+</layout>
